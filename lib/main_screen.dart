@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 
 class MainSreen extends StatelessWidget {
@@ -14,8 +12,17 @@ class MainSreen extends StatelessWidget {
         title: const Text('Judul Halaman'),
       ),
       body: Container(
-        margin: EdgeInsets.symmetric(horizontal: 8),
-      ),
+          margin: const EdgeInsets.symmetric(horizontal: 8),
+          child: ListView.builder(
+            itemCount: data.length,
+            itemBuilder: (context, index) {
+              return Card(
+                child: ListTile(
+                  title: Text('${data[index]}'),
+                ),
+              );
+            },
+          )),
     );
   }
 }
